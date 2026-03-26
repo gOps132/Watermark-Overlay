@@ -11,7 +11,7 @@ Desktop utility for applying the same overlay or watermark image to a batch of p
 
 ## Recommended Setup
 
-Create a fresh virtual environment for your current platform. The checked-in `.venv` in this repo was created on Windows and should not be reused on macOS or Linux.
+Create a fresh virtual environment for your current platform.
 
 ```bash
 python3 -m venv .venv-local
@@ -26,27 +26,12 @@ python -m pip install -r requirements.txt
 python main.py
 ```
 
-On this Mac, `/usr/bin/python3` is linked against an older Tk 8.5 runtime that launches `Python.app` without a usable visible window. The verified working run path is:
+## Build Packages
 
 ```bash
-./.venv-local312-uv/bin/python main.py
+python3 scripts/build.py --help
 ```
 
-## macOS Notes
+See [docs/BUILD.md](/Users/giancedrick/dev/repo/Watermark-Overlay/docs/BUILD.md) for macOS, Windows, and CrossOver build instructions.
 
-- On macOS with older Tk builds, the app automatically switches to a standard `tkinter` compatibility UI instead of `CustomTkinter`.
-- On this machine, the system Python at `/usr/bin/python3` is not usable for Tk apps. Use the local Python 3.12 + Tk 8.6 environment shown above.
-- The app now falls back to file selection if drag and drop is unavailable on your Python or Tk build.
-- If you still see startup or rendering issues on macOS, use a Python build linked against Tk 8.6 or newer.
-- The app displays a compatibility note when it detects an older Tk runtime.
-
-## Packaging
-
-Build a standalone app with PyInstaller:
-
-```bash
-python -m pip install pyinstaller
-pyinstaller main.spec
-```
-
-The repo includes `hook-tkinterdnd2.py` so the TkDnD runtime files are bundled with the packaged app.
+See [docs/PLATFORM.md](/Users/giancedrick/dev/repo/Watermark-Overlay/docs/PLATFORM.md) for platform-specific runtime notes.

@@ -1,13 +1,14 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+app_name = "WatermarkOverlay"
 
 a = Analysis(
-    ['main.py'],
-    pathex=[],
+    ["../main.py"],
+    pathex=[".."],
     binaries=[],
-    datas=[('WATERMARK.png', '.')],
+    datas=[("../WATERMARK.png", ".")],
     hiddenimports=[],
-    hookspath=['.'],
+    hookspath=[".."],
     hooksconfig={},
     runtime_hooks=[],
     excludes=[],
@@ -22,7 +23,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='main',
+    name=app_name,
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
