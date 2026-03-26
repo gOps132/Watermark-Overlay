@@ -1,0 +1,16 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+
+# OS/editor noise
+.DS_Store
+
+# Packaging outputs
+dist/
+build/
+*.spec.bak
